@@ -1,12 +1,14 @@
-import React from 'react'
+import React from "react";
+import { useSelector } from "react-redux";
 
 const CakeContainer = () => {
+  const numOfCake = useSelector((state) => state.cakeReducer.numOfCake);
   return (
     <div>
-        <h2>number of cakes</h2>
-        <button>Buy Cakes</button>
+      <h2>{numOfCake}</h2>
+      <button>Buy Cakes</button>
     </div>
-  )
-}
+  );
+};
 
-export default CakeContainer 
+export default CakeContainer;

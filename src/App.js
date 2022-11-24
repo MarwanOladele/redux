@@ -1,15 +1,12 @@
 import CakeContainer from "./component/CakeContainer";
-import { Provider } from "react-redux";
-import store from "./redux/store";
 import "./App.css";
 
 function App() {
-  return;
-  <Provider store={store}>
+  return (
     <div className="App">
       <CakeContainer />
     </div>
-  </Provider>;
+  );
 }
 
 export default App;
