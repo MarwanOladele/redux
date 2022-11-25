@@ -1,6 +1,6 @@
-import { BUY_CAKE } from "../action/cakeTypes";
+import { BUY_CAKE, RESET } from "../action/cakeTypes";
 
-const initialState = {
+export const initialState = {
   numOfCake: 10,
 };
 
@@ -11,9 +11,16 @@ const cakeReducer = (state = initialState, action) => {
         ...state,
         numOfCake: state.numOfCake - 1,
       };
+      case RESET:
+        return {
+          ...state,
+          numOfCake: 0,
+        };
     default:
       return state;
   }
 };
+
+
 
 export default cakeReducer

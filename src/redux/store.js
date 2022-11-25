@@ -2,7 +2,7 @@ import { createStore, combineReducers } from "redux";
 import cakeReducer from "./reducer/cakeReducer";
 
 const allReducer  = combineReducers({
-    cakeReducer
+    cakeReducer,
 })
 
 const store = createStore(allReducer)  

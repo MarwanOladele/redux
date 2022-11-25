@@ -1,12 +1,17 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { buyCake, reset } from "../redux/action/cakeAction";
 
 const CakeContainer = () => {
   const numOfCake = useSelector((state) => state.cakeReducer.numOfCake);
+  const dispatch = useDispatch();
+
   return (
     <div>
       <h2>{numOfCake}</h2>
-      <button>Buy Cakes</button>
+      <h2>{numOfCake}</h2>
+      <button onClick={() => dispatch(buyCake())}>Buy Cakes</button>
+      <button onClick={() => dispatch(reset())}>reset</button>
     </div>
   );
 };

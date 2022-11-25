@@ -1,7 +1,13 @@
-import { BUY_CAKE } from "./cakeTypes";
+import { BUY_CAKE, RESET } from "./cakeTypes";
 
-const buyCake = () => {
+export const buyCake = () => {
   return {
     type: BUY_CAKE,
   };
 };
+
+export const reset = () => {
+  return {
+    type: RESET,
+  };
+}; 
