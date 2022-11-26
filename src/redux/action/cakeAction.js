@@ -1,4 +1,4 @@
-import { BUY_CAKE, RESET } from "./cakeTypes";
+import { BUY_CAKE, RESET, SELL_CAKE } from "./cakeTypes";
 
 export const buyCake = () => {
   return {
@@ -11,3 +11,9 @@ export const reset = () => {
     type: RESET,
   };
 }; 
+
+export const sellCake = () => {
+  return {
+    type: SELL_CAKE,
+  };
+};
