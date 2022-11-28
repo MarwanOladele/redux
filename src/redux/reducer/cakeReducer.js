@@ -1,20 +1,20 @@
-import { BUY_CAKE, RESET, SELL_CAKE } from "../action/cakeTypes";
+import { BUY_CAKE, RESET, SELL_CAKE } from "../action/Cake/cakeTypes";
 
 export const initialState = {
   numOfCake: 10,
 };
 
-const cakeReducer = (state = initialState, action) => {
+const UserReducer = (state = initialState, action) => {
   switch (action.type) {
     case BUY_CAKE:
       return {
         ...state,
-        numOfCake: state.numOfCake - 1,
+        numOfCake: state.numOfCake - action.payload,
       };
     case RESET:
       return {
         ...state,
-        numOfCake: 0,
+        numOfCake: 0, 
       };
     case SELL_CAKE:
       return {
@@ -26,4 +26,4 @@ const cakeReducer = (state = initialState, action) => {
   }
 };
 
-export default cakeReducer;
+export default UserReducer;
