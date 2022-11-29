@@ -11,6 +11,7 @@ const UserContainer = () => {
   const error = useSelector((state) => state.UserReducer.error);
   const users = useSelector((state) => state.UserReducer.user);
   console.log(users);
+  
 
   return
   {
