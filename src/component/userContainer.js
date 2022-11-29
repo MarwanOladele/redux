@@ -11,12 +11,8 @@ const UserContainer = () => {
   const error = useSelector((state) => state.UserReducer.error);
   const users = useSelector((state) => state.UserReducer.user);
   console.log(users);
-  
 
-  return
-  {
-    loading ? <h1>Loading</h1> : <h1>Marwan</h1>
-  }
+  return <div>{loading ? <h1>Loading</h1> : <h1>Marwan</h1>}</div>;
 };
 
 export default UserContainer;
