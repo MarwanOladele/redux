@@ -11,16 +11,15 @@ import axios from "axios";
 const UserContainer = () => {
   const dispatch = useDispatch();
 
-  const fetchUser = async () => {
+  const fetchUser = () => {
     dispatch(fetchUserRequest());
-
-    const response = await axios
+    axios
       .get("https://jsonplaceholder.typicode.com/users")
+      .then((response) => {
+        dispatch(fetchUserSucess(response.data));
+      })
       .catch((error) => dispatch(fetchUserFailure(error.message)));
-      dispatch(fetchUserSucess(response.data));
-
   };
-
 
   useEffect(() => {
     fetchUser();
@@ -39,7 +38,15 @@ const UserContainer = () => {
       {loading ? (
         <h1>Loading</h1>
       ) : (
-        users.map((user) => <h1 key={user.id}>{user.name}</h1>)
+        users.map((user) => {
+          return (
+            <div key={user.id}>
+              <h1>{user.name}</h1>
+              <p>{user.username}</p>
+              <p>{user.email}</p>
+            </div>
+          );
+        })
       )}
     </div>
   );
