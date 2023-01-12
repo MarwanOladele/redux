@@ -5,7 +5,7 @@ import {
 } from "../action/User/userTypes";
 
 const initialState = {
-  isLoading: false,
+  isLoading: true,
   user: [],
   error: "",
 };
@@ -15,7 +15,8 @@ const UserReducer = (state = initialState, action) => {
     case FETCH_USER_FAILURE:
       return {
         ...state,
-        isLoading: true,
+        isLoading: false,
+        error: action.payload
       };
     case FETCH_USER_SUCESS:
       return {
@@ -26,8 +27,6 @@ const UserReducer = (state = initialState, action) => {
     case FETCH_USER_REQUEST:
       return {
         ...state,
-        isLoading: false,
-        error: action.payload
       };
     default:
       return state;

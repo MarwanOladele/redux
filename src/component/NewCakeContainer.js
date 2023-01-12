@@ -7,7 +7,6 @@ const NewCakeContainer = () => {
   const dispatch = useDispatch();
 
   const [num, setNum] = useState(1);
-  console.log(num);
 
   return (
     <div>
