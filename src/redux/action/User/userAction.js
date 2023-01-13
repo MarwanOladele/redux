@@ -43,10 +43,10 @@ export const fetchUserFailure = (err) => {
 //   };
 // };
 
-// export const fetchUser = async () => {
-//   const response = await axios
-//     .get("https://jsonplaceholder.typicode.com/users")
-//     .catch((error) => console.log(error));
+export const fetchUser = async () => {
+  const response = await axios
+    .get("https://jsonplaceholder.typicode.com/users")
+    .catch((error) => console.log(error));
 
-//     console.log(response.data);
-// };
+    console.log(response.data);
+};
